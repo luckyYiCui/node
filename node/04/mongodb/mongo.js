@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-27 14:28:01
- * @LastEditTime : 2019-12-27 16:40:04
+ * @LastEditTime : 2020-01-03 09:42:07
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \node\04\mongodb\mongo.js
@@ -23,7 +23,6 @@
     // console.log('ret', ret);
     const db = client.db('test');
     const fruits = db.collection('fruits');
-
     // 添加文档
     ret = await fruits.insertOne({
         name: '香蕉',
@@ -36,12 +35,10 @@
 
     //更新文档
     ret = await fruits.updateOne({ name: '香蕉' }, {
-        $set: { name: '橙子' }
+        $set: { name: 'xiaowan子' }
     })
 
     // 删除文档
     ret = await fruits.deleteOne({ name: '橙子' })
-
-    await fruits.deleteMany();
     client.close();
 })()
