@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-01-06 16:13:03
- * @LastEditTime : 2020-01-07 09:13:19
+ * @LastEditTime : 2020-01-07 09:38:17
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \121231\node\06\auth\index.js
@@ -45,7 +45,6 @@ router.get('/github/callback', async(ctx) => {
     ctx.body = `
     <h1>Hello ${res.data.login}</h1>
     <img src="${res.data.avatar_url}" alt=""/>`
-
 })
 app.use(router.routes());
 app.use(router.allowedMethods()) //当客户端发送POST请求时，就会直接返回失败
