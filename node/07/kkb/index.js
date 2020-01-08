@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-01-02 15:42:43
- * @LastEditTime : 2020-01-07 17:48:51
+ * @LastEditTime : 2020-01-08 11:20:29
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \node\05\index.js
@@ -92,8 +92,12 @@ app.use(hbs.middleware({
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const api = require('./routes/api.js');
+const students = require('./routes/students.js');
 app.use(users.routes());
 app.use(index.routes());
+app.use(api.routes());
+app.use(students.routes());
 
 
 

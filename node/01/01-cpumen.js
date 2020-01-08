@@ -1,12 +1,12 @@
 /*
  * @Author: your name
  * @Date: 2019-12-25 14:31:36
- * @LastEditTime : 2019-12-25 14:50:01
+ * @LastEditTime : 2020-01-08 17:27:58
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \node\01-run.js
  */
-const os = require('os')
+const os = require('os');
 const cpuStat = require('cpu-stat');
 
 function percent() {

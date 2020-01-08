@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-01-06 09:49:30
- * @LastEditTime : 2020-01-07 17:56:20
+ * @LastEditTime : 2020-01-08 14:28:46
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \121231\node\06\kkb\routes\users.js
@@ -87,13 +87,15 @@ router.get("/getUser-token", jwtAuth({ secret }), async ctx => {
 
 // koa 表单验证
 const bouncer = require('koa-bouncer'); // 中间件引入
+const isUser = name => Promise.resolve(name == 'abcabc');
 const val = async(ctx, next) => {
     try {
         ctx.validateBody('name')
             .required('要求提供用户名')
             .isString()
             .trim()
-            .isLength(6, 100, '要求提供用户名必须 6-100');
+            .isLength(6, 100, '要求提供用户名必须 6-100')
+            // .check(await isUser(ctx.vals.name), 'Check ok'); // 自定义验证方法，验证失败，返回 'check ok’
         console.log(JSON.stringify(ctx.vals));
         next()
     } catch (err) {
